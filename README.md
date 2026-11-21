@@ -1,37 +1,96 @@
-# PCI 2.0 Dashboard: Provincial Governance, Peer Gaps and New Firm Formation
+# PCI 2.0 Dashboard: Provincial Governance and New Firm Formation
 
 ## 1. Project overview
 
-This project examines how provinces and centrally governed cities compare on the nine PCI 2.0 sub-indices published for 2025, and whether related governance dimensions are associated with new enterprise formation in historical data.
+This project explores how provinces and centrally governed cities compare across the nine PCI 2.0 sub-indices published for 2025, and examines whether governance indicators are associated with new enterprise formation.
 
-The dashboard is designed as a decision-support and exploratory benchmarking tool. It helps users:
+The dashboard is an exploratory benchmarking and decision-support tool. It helps users:
 
-- Compare a province with a selected peer group.
-- Identify governance dimensions where its score is below the peer median.
-- Examine associations between governance indicators and newly registered enterprises per 1,000 residents.
-- Explore how results change under alternative peer sets, horizons and evidence rules.
+- Compare a selected province with a relevant peer group.
+- Identify PCI 2.0 dimensions where a province scores below its peers.
+- Explore statistical associations between governance indicators and new enterprise formation.
+- Examine how findings change under different peer groups and analytical assumptions.
 
 **The analysis does not establish causality and should not be used as a stand-alone basis for allocating public reform budgets.**
 
-See [Limitations](docs/LIMITATIONS.md) and [Presentation](docs/PRESENTATION.md).
-
 ## 2. Research question
 
-### Which PCI sub-index should a province prioritize improving in order to support private sector development?
+**Which PCI sub-index should provinces and cities prioritize investigating to support private-sector development?**
 
-The outcome is newly registered enterprises per 1,000 residents. It is not a direct measure of inward investment, job creation, firm survival or productivity.
+The main outcome is newly registered enterprises per 1,000 residents. It does not directly measure inward investment, job creation, firm survival or productivity.
 
-## 3. Main recommendation
+## 3. Interpretation and recommendation
 
-Use the dashboard to benchmark provincial governance and identify questions for further investigation.
+Use the dashboard to benchmark governance indicators and identify areas for further investigation.
 
-Do not interpret a priority label as proof that improving a particular sub-index will increase enterprise formation. The panel uses the legacy PCI framework, while the provincial comparison uses PCI 2.0 (2025). The two frameworks are not directly equivalent.
+Do not interpret a priority label as proof that improving a particular sub-index will increase enterprise formation.
 
-The current presentation identifies a borderline association for transparency and compliance at a two-year horizon. This result is sensitive to the selected horizon and multiple comparisons. At the default three-year horizon, no province receives a priority label under the default evidence rule.
+The project uses two distinct PCI frameworks:
 
-See `docs/PRESENTATION.md` for the presentation narrative and `docs/LIMITATIONS.md` for the complete limitations.
+- PCI 2.0 (2025): the current framework with nine sub-indices.
+- Legacy PCI (2010–2024): the historical framework used for panel analysis.
 
-## 4. Repository structure
+These frameworks are not directly equivalent. Historical associations must not be presented as direct estimates of the effect of PCI 2.0 scores.
+
+See:
+- [Limitations](docs/LIMITATIONS.md)
+- [Presentation outline](docs/PRESENTATION.md)
+- [AI use disclosure](docs/AI_USE.md)
+
+## 4. Data sources and roles
+
+| File | Role |
+|---|---|
+| `data/pci_provinces.csv` | 2025 PCI sub-indices and province-level inputs |
+| `data/pci_bpi_2025.csv` | Separate 2025 BPI data |
+| `data/pci_panel_63.csv` | Historical PCI data under legacy frameworks |
+| `data/outcomes_panel_63.csv` | Historical outcomes for the 63 former provinces |
+| `data/outcomes_panel_34.csv` | Outcomes aggregated to the 34-province geography |
+| `data/crosswalk_63_to_34.csv` | Geographic crosswalk from 63 to 34 provinces |
+| `data/pci_concordance.csv` | Conceptual mapping between PCI indicators |
+| `data/pci_subindex_meta.csv` | Display metadata and team-defined assumptions |
+| `data/derived_features_2025.csv` | Derived analytical variables |
+| `data/model_results.csv` | Statistical model outputs |
+
+Original source files and intermediate data are stored under `data/raw/` where applicable.
+
+## 5. Methodological rules
+
+### PCI 2.0 and historical PCI
+
+- PCI 2.0 (2025) has nine sub-indices.
+- BPI is a separate measure and must not be treated as a PCI sub-index or PCI total.
+- Historical PCI scores use earlier frameworks and must retain their year-specific definitions.
+- Do not calculate a direct 2024–2025 PCI change.
+
+### Geographic harmonization
+
+The 63-to-34 crosswalk is used to aggregate outcomes and population.
+
+- Allocate counts and population using the crosswalk shares, then aggregate.
+- Calculate per-capita measures after aggregation where appropriate.
+- Aggregate GRDP per capita using population weights.
+- Never sum or average old PCI scores to create a new-province PCI score.
+
+### Outcome interpretation
+
+Newly registered enterprises per 1,000 residents measure local firm formation.
+
+They do not directly measure:
+- Investment attracted.
+- Number of jobs created.
+- Firm survival.
+- Business productivity.
+
+### Statistical interpretation
+
+- Regression estimates represent associations, not causal effects.
+- Report the sample size, period, specification and uncertainty.
+- Use complete cases for each model.
+- Missing values must not be treated as zero.
+- Distinguish observed results from assumptions assigned by the team.
+
+## 6. Repository structure
 
 ```text
 .
@@ -54,34 +113,17 @@ See `docs/PRESENTATION.md` for the presentation narrative and `docs/LIMITATIONS.
 │   ├── test_stage5.js
 │   └── validate_data.py
 ├── config/
-│   ├── gso_pxweb_query_template.json
-│   ├── pci_historical_column_map_template.xlsx
-│   ├── pci_historical_mapping_verified.csv
-│   └── pci_manual_entry_2010_2024.csv
 ├── data/
-│   ├── raw/
-│   │   └── gso/
-│   ├── crosswalk_63_to_34.csv
-│   ├── derived_features_2025.csv
-│   ├── model_results.csv
-│   ├── outcomes_panel_34.csv
-│   ├── outcomes_panel_63.csv
-│   ├── pci_bpi_2025.csv
-│   ├── pci_concordance.csv
-│   ├── pci_panel_63.csv
-│   ├── pci_provinces.csv
-│   └── pci_subindex_meta.csv
+│   └── raw/
 ├── docs/
 │   ├── AI_USE.md
 │   ├── JUDGE_REVIEW.md
 │   ├── LIMITATIONS.md
 │   ├── PRESENTATION.md
 │   ├── PROMPTS.md
-│   ├── index.html
 │   └── source_log_template.csv
 ├── tests/
 ├── CLAUDE.md
-├── SETUP_VI.md
 ├── checks.md
 ├── index.html
 └── requirements.txt
