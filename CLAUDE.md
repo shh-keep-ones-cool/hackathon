@@ -4,7 +4,7 @@
 The reader is a research/case-competition jury and a policy-oriented business reader. The dashboard helps the reader identify which dimensions of perceived provincial governance are relatively stronger/weaker and how those dimensions are associated with business formation and enterprise density; it does not rank provinces by an unpublished PCI total or recommend a causal policy intervention.
 
 ## Question (exact English wording)
-**How are perceived provincial governance conditions associated with private-sector business formation and business density across Vietnam's 34 provinces in 2025?**
+**Which PCI sub-index should provinces and cities prioritize improving in order to attract business?**
 
 ## File roles
 - `data/pci_provinces.csv`: primary 2025 PCI component input plus GSO outcomes when verified; `pci_total` is blank unless VCCI publishes it.
