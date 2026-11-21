@@ -5,13 +5,13 @@ Only the Stage 6 prompt was available to the assistant that wrote this file. **S
 ## Stage 1
 > 1. From pci_concordance.csv build 4-5 bridge groups (mean of z-scored mapped
    indicators). Indicators with no old counterpart are used only in 2025.
-2. Z-score within each year. Never put 2025 into the old-framework
+> 2. Z-score within each year. Never put 2025 into the old-framework
    regressions and never compute "change 2024 to 2025".
-3. Merge 63 to 34: sum counts, population and GRDP first, then compute rates
+> 3. Merge 63 to 34: sum counts, population and GRDP first, then compute rates
    and ln GRDP per capita. Merge PCI groups with survey-firm weights (else
    active-firm weights); also run unweighted and report if conclusions change.
-QUALITY CHECKS
-Print: merged totals equal pre-merger totals; every checks.md value; table of
+> QUALITY CHECKS
+> Print: merged totals equal pre-merger totals; every checks.md value; table of
 provinces unchanged / renamed / merged / split. Say that merging reduces
 within-province variation. Wait for me.
 
