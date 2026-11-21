@@ -10,7 +10,7 @@ Only the Stage 6 prompt was available to the assistant that wrote this file. **S
 > 3. Merge 63 to 34: sum counts, population and GRDP first, then compute rates
    and ln GRDP per capita. Merge PCI groups with survey-firm weights (else
    active-firm weights); also run unweighted and report if conclusions change.
-> QUALITY CHECKS
+QUALITY CHECKS
 > Print: merged totals equal pre-merger totals; every checks.md value; table of
 provinces unchanged / renamed / merged / split. Say that merging reduces
 within-province variation. Wait for me.
