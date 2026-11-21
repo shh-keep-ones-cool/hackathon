@@ -1,0 +1,64 @@
+﻿old_province_id,old_province_name,new_province_id,new_province_name,change_type,share,note
+an-giang,An Giang,an-giang,An Giang,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+ba-ria-vung-tau,Bà Rịa - Vũng Tàu,tp-ho-chi-minh,TP. Hồ Chí Minh,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+bac-giang,Bắc Giang,bac-ninh,Bắc Ninh,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+bac-kan,Bắc Kạn,thai-nguyen,Thái Nguyên,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+bac-lieu,Bạc Liêu,ca-mau,Cà Mau,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+bac-ninh,Bắc Ninh,bac-ninh,Bắc Ninh,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+ben-tre,Bến Tre,vinh-long,Vĩnh Long,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+binh-dinh,Bình Định,gia-lai,Gia Lai,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+binh-duong,Bình Dương,tp-ho-chi-minh,TP. Hồ Chí Minh,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+binh-phuoc,Bình Phước,dong-nai,Đồng Nai,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+binh-thuan,Bình Thuận,lam-dong,Lâm Đồng,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+ca-mau,Cà Mau,ca-mau,Cà Mau,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+can-tho,Cần Thơ,can-tho,Cần Thơ,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+cao-bang,Cao Bằng,cao-bang,Cao Bằng,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+da-nang,Đà Nẵng,da-nang,Đà Nẵng,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+dak-lak,Đắk Lắk,dak-lak,Đắk Lắk,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+dak-nong,Đắk Nông,lam-dong,Lâm Đồng,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+dien-bien,Điện Biên,dien-bien,Điện Biên,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+dong-nai,Đồng Nai,dong-nai,Đồng Nai,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+dong-thap,Đồng Tháp,dong-thap,Đồng Tháp,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+gia-lai,Gia Lai,gia-lai,Gia Lai,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+ha-giang,Hà Giang,tuyen-quang,Tuyên Quang,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+ha-nam,Hà Nam,ninh-binh,Ninh Bình,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+ha-noi,Hà Nội,ha-noi,Hà Nội,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+ho-chi-minh-city,TP. Hồ Chí Minh,tp-ho-chi-minh,TP. Hồ Chí Minh,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+ha-tinh,Hà Tĩnh,ha-tinh,Hà Tĩnh,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+hai-duong,Hải Dương,hai-phong,Hải Phòng,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+hai-phong,Hải Phòng,hai-phong,Hải Phòng,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+hau-giang,Hậu Giang,can-tho,Cần Thơ,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+hoa-binh,Hòa Bình,phu-tho,Phú Thọ,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+hung-yen,Hưng Yên,hung-yen,Hưng Yên,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+khanh-hoa,Khánh Hòa,khanh-hoa,Khánh Hòa,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+kien-giang,Kiên Giang,an-giang,An Giang,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+kon-tum,Kon Tum,quang-ngai,Quảng Ngãi,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+lai-chau,Lai Châu,lai-chau,Lai Châu,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+lam-dong,Lâm Đồng,lam-dong,Lâm Đồng,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+lang-son,Lạng Sơn,lang-son,Lạng Sơn,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+lao-cai,Lào Cai,lao-cai,Lào Cai,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+long-an,Long An,tay-ninh,Tây Ninh,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+nam-dinh,Nam Định,ninh-binh,Ninh Bình,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+nghe-an,Nghệ An,nghe-an,Nghệ An,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+ninh-binh,Ninh Bình,ninh-binh,Ninh Bình,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+ninh-thuan,Ninh Thuận,khanh-hoa,Khánh Hòa,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+phu-tho,Phú Thọ,phu-tho,Phú Thọ,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+phu-yen,Phú Yên,dak-lak,Đắk Lắk,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+quang-binh,Quảng Bình,quang-tri,Quảng Trị,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+quang-nam,Quảng Nam,da-nang,Đà Nẵng,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+quang-ngai,Quảng Ngãi,quang-ngai,Quảng Ngãi,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+quang-ninh,Quảng Ninh,quang-ninh,Quảng Ninh,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+quang-tri,Quảng Trị,quang-tri,Quảng Trị,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+soc-trang,Sóc Trăng,can-tho,Cần Thơ,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+son-la,Sơn La,son-la,Sơn La,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+tay-ninh,Tây Ninh,tay-ninh,Tây Ninh,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+thai-binh,Thái Bình,hung-yen,Hưng Yên,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+thai-nguyen,Thái Nguyên,thai-nguyen,Thái Nguyên,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+thanh-hoa,Thanh Hóa,thanh-hoa,Thanh Hóa,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+thua-thien-hue,Thừa Thiên Huế,hue,Huế,đổi tên,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+tien-giang,Tiền Giang,dong-thap,Đồng Tháp,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+tra-vinh,Trà Vinh,vinh-long,Vĩnh Long,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+tuyen-quang,Tuyên Quang,tuyen-quang,Tuyên Quang,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+vinh-long,Vĩnh Long,vinh-long,Vĩnh Long,giữ,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+vinh-phuc,Vĩnh Phúc,phu-tho,Phú Thọ,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.
+yen-bai,Yên Bái,lao-cai,Lào Cai,gộp,1.0,Đối chiếu theo Nghị quyết 202/2025/QH15; toàn bộ địa giới tỉnh cũ chuyển vào tỉnh mới.

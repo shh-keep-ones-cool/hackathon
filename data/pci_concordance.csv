@@ -1,0 +1,13 @@
+﻿old_code,new_code,bridge_group,change_type,note
+OLD_01_ENTRY_COSTS,PCI_S1,01_market_entry,đổi tên,"Chi phí gia nhập thị trường → Gia nhập thị trường (tên theo workbook PCI 2025). Bộ chỉ tiêu và thang đo PCI 2.0 khác; chỉ dùng để so xu hướng, không so điểm tuyệt đối. Chưa đối chiếu chỉ tiêu cấu thành."
+OLD_02_LAND_ACCESS,PCI_S2,02_business_resources,đổi tên,"Sheet 2025 đặt tên Tiếp cận đất đai nhưng ngoài đất đai còn chứa chỉ tiêu tín dụng cho DNNVV, kết nối ngân hàng, dữ liệu mở và nền tảng số dùng chung (đã xem header). Phạm vi rộng hơn chỉ số cũ: cầu nối gần đúng."
+OLD_03_TRANSPARENCY,PCI_S3,03_transparency_and_compliance,giữ,Cùng tên Tính minh bạch. Chỉ giữ theo tên; chưa đối chiếu chỉ tiêu cấu thành nên chưa khẳng định so sánh được trực tiếp.
+OLD_04_TIME_COSTS,PCI_S4,03_transparency_and_compliance,đổi tên,"Chi phí thời gian → Chi phí tuân thủ hành chính (theo tên). Gần nhau về khái niệm, không đồng nhất; chưa đối chiếu chỉ tiêu."
+OLD_05_INFORMAL_CHARGES,PCI_S5,04_integrity_and_fair_competition,giữ,Cùng tên Chi phí không chính thức. Chỉ giữ theo tên; chỉ tiêu có thể đã điều chỉnh trong PCI 2.0.
+OLD_06_POLICY_BIAS,PCI_S6,04_integrity_and_fair_competition,đổi tên,"Thiên vị (Policy Bias, Sub-Index 6 trong workbook 2016/2021/2024) → Cạnh tranh bình đẳng. Workbook 2010 không có chỉ số này (khung 9 chỉ số); năm bắt đầu có cần kiểm tra ở workbook 2011-2015."
+OLD_07_PROACTIVITY,PCI_S9,05_supportive_and_lawful_government,đổi tên,"Tính năng động (Proactivity) → Chính quyền kiến tạo. Liên quan về khái niệm, không đồng nhất."
+OLD_08_BUSINESS_SUPPORT,PCI_S7,05_supportive_and_lawful_government,gộp,Dịch vụ hỗ trợ DN (2021/2024 ghi là Business Support Policy) được gộp vào Chỉ số 7 Hỗ trợ doanh nghiệp cùng với nhóm chỉ tiêu lao động (đã xem header sheet CSTP_7).
+OLD_09_LABOR_TRAINING,PCI_S7,05_supportive_and_lawful_government,gộp,"Đào tạo lao động (2021/2024 ghi là Labor Policy) nằm trong sheet CSTP_7_Ho_tro_va_lao_dong của workbook 2025 (giáo dục phổ thông và nghề, chi phí tuyển dụng và đào tạo, chất lượng lao động), nên nối với PCI_S7 chứ không phải PCI_S2. Cầu nối gần đúng."
+OLD_10_LEGAL_INSTITUTIONS,PCI_S8,05_supportive_and_lawful_government,giữ,Thiết chế pháp lý (Legal Institutions; 2021/2024 ghi là Law & Order). Cùng chủ đề; chưa đối chiếu chỉ tiêu cấu thành.
+,BPI_PRIVATE_SECTOR_DEVELOPMENT,BPI_only_2025,mới,"BPI là chỉ số riêng trong workbook 2025 (sheet BPI); chỉ dùng cho 2025, không gộp vào 9 chỉ số thành phần."
+,BPI_INNOVATION,BPI_only_2025,mới,Không có chỉ số PCI cũ tương ứng; chỉ dùng cho 2025.
