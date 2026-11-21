@@ -2,7 +2,7 @@
 
 ## 1. Question and reader
 
-**Question (exploratory):** *How are perceived provincial governance conditions associated with private-sector business formation and business density across Vietnam's 34 provinces in 2025?*
+**Question (exploratory):** *Which PCI sub-indices should provinces and cities invest in to attract businesses?*
 
 Reader: a case-competition / research jury and policy-oriented business reader. The dashboard is descriptive and associational; it is not a causal evaluation or a government ranking.
 
