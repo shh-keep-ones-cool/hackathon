@@ -1,4 +1,5 @@
-# PCI 2.0 dashboard: where do provinces fall short, and does it matter for new firms?
+# PCI 2.0 dashboard:
+https://shh-keep-ones-cool.github.io/hackathon/
 
 ## Question
 Which PCI sub-indices should provinces and cities invest in to attract businesses? The answer is an **association in public data, not evidence of cause**; see `docs/LIMITATIONS.md` (all 12 items are also in the page footer).
