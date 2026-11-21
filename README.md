@@ -1,8 +1,7 @@
-# PCI 2.0 dashboard:
-https://shh-keep-ones-cool.github.io/hackathon/
+# PCI 2.0 dashboard: where do provinces fall short, and does it matter for new firms?
 
 ## Question
-Which PCI sub-indices should provinces and cities invest in to attract businesses? The answer is an **association in public data, not evidence of cause**; see `docs/LIMITATIONS.md` (all 12 items are also in the page footer).
+For one of Viet Nam's 34 provinces, which PCI 2.0 (2025) area is furthest below similar provinces, and in past data is that area associated with more new firms per 1000 residents? The answer is an **association in public data, not evidence of cause**; see `docs/LIMITATIONS.md` (all 12 items are also in the page footer).
 
 ## Recommendation in one line
 Use the dashboard to benchmark and to choose what to investigate. Do not allocate reform budgets from it yet: at the default 3-year horizon no province gets a priority label, and the one signal that appears (transparency and compliance, 2-year horizon) is borderline. Details: `docs/PRESENTATION.md`.
@@ -12,9 +11,9 @@ Use the dashboard to benchmark and to choose what to investigate. Do not allocat
 
 ## Sources (public aggregates, no personal or firm-level data)
 - PCI 2.0 (2025) sub-indices and business-performance index: VCCI PCI 2025 report page, accessed 2026-11-20.
-- Legacy PCI 2010\u20132024 for 63 provinces: `pci_panel_63.csv` (source note per file to be completed by the data owner).
-- New firms, active firms, population, GRDP 2018\u20132024: NSO Excel workbooks V05.02, V05.04, V02.03-07, V03.12, V03.10, accessed 2026-11-21 (cited by workbook code; add URLs).
-- Merger 63 \u2192 34: Resolution 202/2025/QH15 (`crosswalk_63_to_34.csv`). Boundaries: `vn_provinces.geojson`, simplified for display.
+- Legacy PCI 2010–2024 for 63 provinces: `pci_panel_63.csv` (source note per file to be completed by the data owner).
+- New firms, active firms, population, GRDP 2018–2024: NSO Excel workbooks V05.02, V05.04, V02.03-07, V03.12, V03.10, accessed 2026-11-21 (cited by workbook code; add URLs).
+- Merger 63 → 34: Resolution 202/2025/QH15 (`crosswalk_63_to_34.csv`). Boundaries: `vn_provinces.geojson`, simplified for display.
 
 ## Data roles
 | Role | Files |
