@@ -1,14 +1,60 @@
-# Known values (checks only; never use these as model inputs)
+# Data and Analysis Checks
 
-| ID | Check | Expected | Source |
-|---|---|---|---|
-| C1 | Number of provinces in `pci_provinces.csv` for PCI 2025 | 34 | VCCI, https://pcivietnam.vn/report-2025 |
-| C2 | `pci_s1` (Gia nhập thị trường) of Bắc Ninh, 2025 | 8.20 | VCCI PCI 2025 page, 34-province component table: https://pcivietnam.vn/report-2025 |
-| C3 | `pci_s4` (Chi phí tuân thủ TTHC) of Cà Mau, 2025 | 8.06 | VCCI PCI 2025 page, 34-province component table: https://pcivietnam.vn/report-2025 |
-| C4 | BPI total of Quảng Ninh, 2025 | 5.33 | VCCI PCI 2025 page, BPI table: https://pcivietnam.vn/report-2025 |
-| C5 | After 63→34 aggregation, total `firms_new`, `firms_active`, and `pop` by year vs pre-aggregation totals | equal within 1e-6 where values are complete | Crosswalk based on Resolution 202/2025/QH15: https://baochinhphu.vn/nghi-quyet-cua-quoc-hoi-ve-sap-xep-don-vi-hanh-chinh-cap-tinh-102250612191145158.htm |
-| C6 | Share sum for every `old_province_id` | 1.000000 | `data/crosswalk_63_to_34.csv`; source: Resolution 202/2025/QH15 |
-| C7 | Maximum absolute difference in simple OLS coefficients, JavaScript vs Python, same complete cases | < 0.000001 | `analysis/ols_reference.js` vs `analysis/test_ols_parity.py` |
-| C8 | Number of PCI 2025 survey participants reported by VCCI | 5,128 businesses and business households (national total; do not write this as province-level n) | VCCI / PCI 2.0 release information: https://en.vcci.com.vn/vcci-news/pci-20-when-reform-is-measured-by-business-growth-120587 |
+This file defines verification targets only.
 
-**Important check interpretation:** VCCI's PCI 2025 page publishes the component scores and quality groups; it does not provide a comparable PCI 2025 total-score rank list. Therefore there is deliberately no “rank of province A by `pci_total`” check. Do not invent such a rank. Similarly, the GSO national sum for 2025 newly registered enterprises must be entered only after exporting the same definition/reference period from the relevant NSO table; until then, that reconciliation is `PENDING`, not a passed check.
+**A check must not be marked PASS until the corresponding test has actually been executed and its output reviewed.**
+
+## 1. Data checks
+
+| ID | Check | Expected result | Verification source | Status |
+|---|---|---|---|---|
+| C1 | Number of provinces in PCI 2025 dataset | 34 unique provinces | `data/pci_provinces.csv` | PENDING |
+| C2 | Province IDs in PCI dataset | No duplicate IDs | `data/pci_provinces.csv` | PENDING |
+| C3 | Number of PCI 2.0 sub-indices | 9 | VCCI PCI 2.0 source and `data/pci_provinces.csv` | PENDING |
+| C4 | BPI treatment | Stored separately from PCI sub-indices | `data/pci_bpi_2025.csv` | PENDING |
+| C5 | Crosswalk share by old province | Sum equals 1 | `data/crosswalk_63_to_34.csv` | PENDING |
+| C6 | Crosswalk coverage | All 63 old provinces are mapped | `data/crosswalk_63_to_34.csv` | PENDING |
+
+## 2. Geographic aggregation checks
+
+| ID | Check | Expected result | Verification source | Status |
+|---|---|---|---|---|
+| C7 | Aggregated enterprise counts | Totals conserved where source data are complete | `analysis/aggregate_old_to_new.py` | PENDING |
+| C8 | Aggregated population | Totals conserved where source data are complete | `analysis/aggregate_old_to_new.py` | PENDING |
+| C9 | GRDP per capita aggregation | Population-weighted mean; never summed | `analysis/aggregate_old_to_new.py` | PENDING |
+| C10 | Province-year key | No duplicate province-year records | Outcomes panel files | PENDING |
+
+## 3. Statistical checks
+
+| ID | Check | Expected result | Verification source | Status |
+|---|---|---|---|---|
+| C11 | Python model sample | Complete cases only; actual n reported | `analysis/derive_and_model.py` | PENDING |
+| C12 | OLS parity | Python and JavaScript estimates agree within the documented tolerance | `analysis/test_ols_parity.py` and `analysis/test_stage5.js` | PENDING |
+| C13 | Bootstrap reproduction | Point estimates reproduce the specified reference estimates | `analysis/06a_bootstrap.py` | PENDING |
+| C14 | Causal interpretation | Results described as associations, not causal effects | Model outputs and presentation | PENDING |
+
+## 4. Dashboard checks
+
+| ID | Check | Expected result | Verification source | Status |
+|---|---|---|---|---|
+| C15 | Limitation disclosure | All 12 limitations are present | `analysis/07_check_limitations.py` and `docs/LIMITATIONS.md` | PENDING |
+| C16 | Dashboard values | Displayed values trace back to data or documented calculations | Dashboard and source CSV files | PENDING |
+| C17 | Missing values | Displayed as missing, not silently converted to zero | Dashboard | PENDING |
+| C18 | Peer benchmark | Selected province excluded from its own peer benchmark | Dashboard logic | PENDING |
+
+## 5. External source references
+
+- VCCI PCI 2.0: https://pcivietnam.vn/report-2025
+- Resolution 202/2025/QH15 on provincial administrative reorganization: https://baochinhphu.vn/nghi-quyet-cua-quoc-hoi-ve-sap-xep-don-vi-hanh-chinh-cap-tinh-102250612191145158.htm
+- VCCI PCI 2.0 announcement: https://en.vcci.com.vn/vcci-news/pci-20-when-reform-is-measured-by-business-growth-120587
+
+Verify the original source and the exact definition before using any value as a confirmed benchmark.
+
+## 6. Status definitions
+
+- `PENDING`: Not yet executed or independently verified.
+- `PASS`: Executed and meets the expected result.
+- `FAIL`: Executed and does not meet the expected result.
+- `N/A`: Not applicable, with an explanation.
+
+Do not change a status to PASS based only on an expected value or a previous AI-generated statement.
