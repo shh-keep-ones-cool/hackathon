@@ -1,41 +1,87 @@
-# PCI 2.0 dashboard: where do provinces fall short, and does it matter for new firms?
+# PCI 2.0 Dashboard: Provincial Governance, Peer Gaps and New Firm Formation
 
-## Question
-For one of Viet Nam's 34 provinces, which PCI 2.0 (2025) area is furthest below similar provinces, and in past data is that area associated with more new firms per 1000 residents? The answer is an **association in public data, not evidence of cause**; see `docs/LIMITATIONS.md` (all 12 items are also in the page footer).
+## 1. Project overview
 
-## Recommendation in one line
-Use the dashboard to benchmark and to choose what to investigate. Do not allocate reform budgets from it yet: at the default 3-year horizon no province gets a priority label, and the one signal that appears (transparency and compliance, 2-year horizon) is borderline. Details: `docs/PRESENTATION.md`.
+This project examines how provinces and centrally governed cities compare on the nine PCI 2.0 sub-indices published for 2025, and whether related governance dimensions are associated with new enterprise formation in historical data.
 
-## Open
-`dashboard.html` is one self-contained file (no network requests). Open it in a browser; `#ha-noi` style links select a province.
+The dashboard is designed as a decision-support and exploratory benchmarking tool. It helps users:
 
-## Sources (public aggregates, no personal or firm-level data)
-- PCI 2.0 (2025) sub-indices and business-performance index: VCCI PCI 2025 report page, accessed 2026-11-20.
-- Legacy PCI 2010–2024 for 63 provinces: `pci_panel_63.csv` (source note per file to be completed by the data owner).
-- New firms, active firms, population, GRDP 2018–2024: NSO Excel workbooks V05.02, V05.04, V02.03-07, V03.12, V03.10, accessed 2026-11-21 (cited by workbook code; add URLs).
-- Merger 63 → 34: Resolution 202/2025/QH15 (`crosswalk_63_to_34.csv`). Boundaries: `vn_provinces.geojson`, simplified for display.
+- Compare a province with a selected peer group.
+- Identify governance dimensions where its score is below the peer median.
+- Examine associations between governance indicators and newly registered enterprises per 1,000 residents.
+- Explore how results change under alternative peer sets, horizons and evidence rules.
 
-## Data roles
-| Role | Files |
-|---|---|
-| Raw input (as obtained) | `pci_provinces`, `pci_bpi_2025`, `pci_panel_63`, `outcomes_panel_63`, `crosswalk_63_to_34`, `pci_concordance`, `pci_subindex_meta`, `vn_provinces.geojson` |
-| Derived by scripts | `outcomes_34_rebuilt`, `bridge_groups`, `pci_groups_34_panel`, `derived_features_2025`, `model_results`, `bootstrap_results` |
-| Embedded in the page | `pci_provinces`, `outcomes_34_rebuilt`, `bridge_groups`, `pci_subindex_meta`, `pci_groups_34_panel`, `model_results`, `pci_bpi_2025`, `bootstrap_results` (hashes in the footer) |
-| Team assumptions, not measurements | horizon and cost levels in `pci_subindex_meta.csv` |
-| Do not commit | `*_bak_*.csv`, `outcomes_panel_63_before_gso_import.csv` (see `.gitignore`) |
-| Empty placeholders | `fdi_pc`, `public_invest_pc`, `budget_revenue_pc`, `pm25_mean`, `pci_total`, `grdp` columns of `pci_provinces.csv` |
+**The analysis does not establish causality and should not be used as a stand-alone basis for allocating public reform budgets.**
 
-Note: `model_results.csv` exists in two schemas (old 9-row Stage 2 table; current 3,425-row table). Keep the old one as `model_results_stage2.csv`.
+See [Limitations](docs/LIMITATIONS.md) and [Presentation](docs/PRESENTATION.md).
 
-## Rebuild and test
-```
-python analysis/06a_bootstrap.py        # writes data/bootstrap_results.csv (stops if Stage 2 numbers differ)
-python analysis/06_build_dashboard.py   # writes dashboard.html
-node analysis/test_stage5.js            # 1316 checks
-python analysis/07_check_limitations.py # every limitation is on the page
-python analysis/08_recompute_checks.py  # independent recomputation used in docs/JUDGE_REVIEW.md
-```
-Requires Python 3 with numpy, pandas, scipy, and Node 18+.
+## 2. Research question
 
-## AI / LLM declaration
-Claude (Anthropic) was used to write and review the analysis scripts, the dashboard code, tests and these documents, in conversation with the team. The Stage 6 review recomputed three numbers independently and found one wording problem and two undisclosed issues (see `docs/JUDGE_REVIEW.md`). The team is responsible for the data collection, the choice of horizons and costs, and every claim. AI output was checked by running the scripts and tests, not by trusting the text. Prompts: `docs/PROMPTS.md`.
+# Which PCI sub-index should a province prioritize improving in order to support private sector development?
+
+The outcome is newly registered enterprises per 1,000 residents. It is not a direct measure of inward investment, job creation, firm survival or productivity.
+
+## 3. Main recommendation
+
+Use the dashboard to benchmark provincial governance and identify questions for further investigation.
+
+Do not interpret a priority label as proof that improving a particular sub-index will increase enterprise formation. The panel uses the legacy PCI framework, while the provincial comparison uses PCI 2.0 (2025). The two frameworks are not directly equivalent.
+
+The current presentation identifies a borderline association for transparency and compliance at a two-year horizon. This result is sensitive to the selected horizon and multiple comparisons. At the default three-year horizon, no province receives a priority label under the default evidence rule.
+
+See `docs/PRESENTATION.md` for the presentation narrative and `docs/LIMITATIONS.md` for the complete limitations.
+
+## 4. Repository structure
+
+```text
+.
+├── analysis/
+│   ├── 06_build_dashboard.py
+│   ├── 06a_bootstrap.py
+│   ├── 07_check_limitations.py
+│   ├── 08_recompute_checks.py
+│   ├── aggregate_old_to_new.py
+│   ├── build_geojson.py
+│   ├── common.py
+│   ├── dashboard_core.js
+│   ├── dashboard_template.html
+│   ├── derive_and_model.py
+│   ├── fetch_gso_pxweb.py
+│   ├── import_gso_34.py
+│   ├── import_historical_pci.py
+│   ├── scrape_pci_2025.py
+│   ├── test_ols_parity.py
+│   ├── test_stage5.js
+│   └── validate_data.py
+├── config/
+│   ├── gso_pxweb_query_template.json
+│   ├── pci_historical_column_map_template.xlsx
+│   ├── pci_historical_mapping_verified.csv
+│   └── pci_manual_entry_2010_2024.csv
+├── data/
+│   ├── raw/
+│   │   └── gso/
+│   ├── crosswalk_63_to_34.csv
+│   ├── derived_features_2025.csv
+│   ├── model_results.csv
+│   ├── outcomes_panel_34.csv
+│   ├── outcomes_panel_63.csv
+│   ├── pci_bpi_2025.csv
+│   ├── pci_concordance.csv
+│   ├── pci_panel_63.csv
+│   ├── pci_provinces.csv
+│   └── pci_subindex_meta.csv
+├── docs/
+│   ├── AI_USE.md
+│   ├── JUDGE_REVIEW.md
+│   ├── LIMITATIONS.md
+│   ├── PRESENTATION.md
+│   ├── PROMPTS.md
+│   ├── index.html
+│   └── source_log_template.csv
+├── tests/
+├── CLAUDE.md
+├── SETUP_VI.md
+├── checks.md
+├── index.html
+└── requirements.txt
