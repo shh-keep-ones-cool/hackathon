@@ -17,7 +17,7 @@ See [Limitations](docs/LIMITATIONS.md) and [Presentation](docs/PRESENTATION.md).
 
 ## 2. Research question
 
-# Which PCI sub-index should a province prioritize improving in order to support private sector development?
+### Which PCI sub-index should a province prioritize improving in order to support private sector development?
 
 The outcome is newly registered enterprises per 1,000 residents. It is not a direct measure of inward investment, job creation, firm survival or productivity.
 
