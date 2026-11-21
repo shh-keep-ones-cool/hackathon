@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PCI 2.0: which sub-indices to invest in first</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f7f4;--card:#fff;--ink:#1f2937;--mut:#5b6472;--line:#dcdfe4;--blue:#0072B2;--orange:#E69F00;--verm:#D55E00}
+@media (prefers-color-scheme:dark){:root{--bg:#14171c;--card:#1d2128;--ink:#eceff3;--mut:#a3adbb;--line:#323945;--blue:#56B4E9;--orange:#E69F00;--verm:#F0A070}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+main{max-width:1060px;margin:0 auto;padding:14px 14px 40px}
+section,.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:0 0 14px}
+h1{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin:0 0 6px;font-weight:600}
+h2{font-size:1.05rem;margin:0 0 4px}
+.hl{font-size:1.32rem;line-height:1.3;font-weight:700;margin:0}
+@media(min-width:760px){.hl{font-size:1.7rem}}
+.sub,.note{color:var(--mut);font-size:.82rem}.note{margin:6px 0 0}
+.kns{display:grid;grid-template-columns:1fr;gap:12px;background:none;border:0;padding:0}
+@media(min-width:760px){.kns{grid-template-columns:repeat(3,1fr)}}
+.kn{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kl{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}
+.kv{font-size:2rem;font-weight:700;line-height:1.15}.kd{font-size:.88rem;color:var(--mut)}
+.badge{font-size:.66rem;font-weight:700;border-radius:4px;padding:1px 5px;margin-left:4px;vertical-align:middle;letter-spacing:0;text-transform:none;border:1px solid}
+.live{color:var(--blue);border-color:var(--blue)}.py{color:var(--mut);border-color:var(--mut)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84rem;margin:6px 0 8px}.legend span{display:inline-flex;align-items:center;gap:5px}
+#chart{width:100%}
+.ctl{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:760px){.ctl{grid-template-columns:repeat(3,1fr)}}
+label{display:block;font-size:.85rem;font-weight:600}select{width:100%;min-height:44px;font:inherit;padding:6px 8px;margin-top:3px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+.chk{display:flex;gap:8px;align-items:flex-start;font-weight:400;min-height:44px}.chk input{width:22px;height:22px;margin-top:2px}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.pt{border-collapse:collapse;width:100%;min-width:860px;font-size:.88rem}
+.pt th,.pt td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}.pt thead th{font-size:.76rem;color:var(--mut);position:sticky;top:0;background:var(--card)}
+.pt td.num{font-variant-numeric:tabular-nums;white-space:nowrap}.pt tr.topr{background:rgba(0,114,178,.09)}.pt tbody th{font-weight:700}
+.dim{opacity:.45}.pt td.dim{font-size:.82rem}output{font-weight:700}
+.chip{display:inline-block;border-radius:999px;padding:1px 9px;font-size:.78rem;font-weight:600;border:1.5px solid;white-space:nowrap}
+.c-strong{color:#fff;background:var(--blue);border-color:var(--blue)}.c-low{color:var(--mut);border-color:var(--mut)}.c-neg{color:var(--verm);border-color:var(--verm)}
+.formula{font-size:.84rem;background:rgba(127,127,127,.1);border-radius:6px;padding:8px 10px;margin-top:8px}
+.mapwrap{display:grid;gap:10px;grid-template-columns:1fr}@media(min-width:760px){.mapwrap{grid-template-columns:280px 1fr}}
+#map svg{max-height:620px;display:block;margin:0 auto}.prov{cursor:pointer}.prov:focus{outline:none;stroke:#000;stroke-width:3}
+.bar{height:14px;border-radius:3px;border:1px solid var(--line)}.bl{display:flex;justify-content:space-between;font-size:.8rem;color:var(--mut)}
+footer{font-size:.82rem;color:var(--mut)}footer h2{color:var(--ink);font-size:.95rem;margin-top:10px}footer ul{padding-left:18px;margin:4px 0}code{font-size:.8rem}
+</style></head><body><main>
+<noscript>This dashboard needs JavaScript to compute the benchmarks from the embedded data.</noscript>
+<section id="head"><h1>PCI 2.0 (2025) · investment priorities for attracting firms</h1><p class="hl" id="headline" aria-live="polite"></p><p class="note">Associations in survey data, not proof of cause. PCI is a perception survey of firms; with n = 34 provinces results show association only.</p></section>
+<section class="kns" id="keys" aria-label="Three key numbers"></section>
+<section><h2>Gap to peer median, by bridge group</h2><div class="sub">Groups are ordered by priority (see table). Units: standard deviations (SD) of the 34-province distribution of each group score.</div>
+<div class="legend"><span><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="#0072B2" stroke="#1f2937"/></svg><b id="lg-name">Province</b></span><span><svg width="18" height="18" aria-hidden="true"><path d="M9 1L17 9L9 17L1 9Z" fill="#E69F00" stroke="#1f2937"/></svg>score predicted by GRDP per capita</span><span><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="4" fill="#fff" stroke="#6b7280" stroke-width="1.5"/></svg>each peer province</span><span><svg width="22" height="18" aria-hidden="true"><line x1="11" x2="11" y1="1" y2="17" stroke="#1f2937" stroke-width="1.6" stroke-dasharray="4 2"/></svg>peer median (province itself excluded)</span></div>
+<div id="chart"></div><p class="note"><span class="badge live">live</span> computed in your browser from the embedded CSVs. Higher score = firms rate that area of provincial government more favourably.</p></section>
+<section><h2>Controls</h2><div class="ctl">
+<div><label for="sel-prov">Province or city</label><select id="sel-prov"></select></div>
+<div><label for="sel-k">Panel horizon (years between PCI and new firms)</label><select id="sel-k"><option value="1">1 year</option><option value="2">2 years</option><option value="3" selected>3 years (assumed reform lag)</option></select></div>
+<div><label for="sel-peer">Peer set</label><select id="sel-peer"><option value="quartile">Similar income: same GRDP-per-capita quartile</option><option value="nearest8">Similar income: 8 nearest in GRDP per capita</option><option value="region">Same region</option><option value="all">All other provinces</option></select></div>
+<div><label for="sel-ev">Evidence used for labels and ranking</label><select id="sel-ev"><option value="both" selected>Both: 2025 and panel</option><option value="y25">2025 association only</option><option value="panel">Panel association only</option></select></div>
+<div class="chk"><input type="checkbox" id="chk-excl"><label class="chk" for="chk-excl" style="margin:0">Leave out HCMC and Hà Nội (peers, regressions and panel run)</label></div>
+<div class="chk"><input type="checkbox" id="chk-adj"><label class="chk" for="chk-adj" style="margin:0">Adjust the 2025 association for GRDP per capita and coast</label></div></div>
+<p class="note" id="nline" aria-live="polite" style="color:var(--ink)"></p><p class="note" id="peernote"></p></section>
+<section id="scen"><h2>Scenario: closing the gap to the peer median</h2><div class="sub">An association in past data, not a forecast. Intervals are 95% bootstrap intervals (provinces resampled).</div>
+<div class="ctl" style="margin-top:8px"><div><label for="sel-sg">Bridge group</label><select id="sel-sg"></select></div><div><label for="rng">Share of the gap to the peer median closed: <output id="rng-out" for="rng">100%</output></label><input type="range" id="rng" min="0" max="100" step="5" value="100" style="width:100%;min-height:44px"></div></div>
+<div id="scen-out" aria-live="polite" style="margin-top:8px"></div></section>
+<section><h2>Priority table</h2><div class="tw" id="table"></div>
+<div class="formula"><b>Scoring formula.</b> Shortfall = max(0, peer median − province score), in SD. Priority score = shortfall ÷ cost score. Cost score = mean of the group’s sub-index cost levels (low = 1, medium = 2, high = 3). Groups labelled <i>strong priority candidate</i> rank above all <i>low reliability</i> groups; within a tier the higher score ranks first. Horizon is shown for planning and is not scored. *Horizon and cost are team assumptions (pci_subindex_meta.csv), not measurements.<br><b>Label rule.</b> The evidence control sets it. <i>Both</i> (default): <i>strong priority candidate</i> only if the 2025 association and the panel association have the same sign <u>and</u> the panel 95% interval excludes 0. <i>2025 only</i>: the 2025 95% interval excludes 0. <i>Panel only</i>: the panel 95% interval excludes 0. In every mode the sign must be positive; otherwise the group is <i>low reliability</i> (or a flagged negative). Columns not used by the chosen rule are dimmed. The panel shows the % change in new firms per 1000 residents, k years later, per +1 SD in the group score, with province and year fixed effects and errors clustered by province.</div></section>
+<section><h2>Map</h2><div class="mapwrap"><div><label for="sel-map">Colour provinces by</label><select id="sel-map"></select><div style="margin-top:12px"><div class="bar" id="bar"></div><div class="bl"><span id="bmin"></span><span id="bmax"></span></div><p class="note">2025 group score in SD (higher = better rated). Selected province: thick black outline. Peers: dashed outline. Tap a province to select it.</p></div></div><div id="map"></div></div></section>
+<footer class="card" id="foot"></footer>
+</main>
+{{CSV_BLOCKS}}
+<script type="application/json" id="geo">{{GEO}}</script>
+<script type="application/json" id="meta">{{META}}</script>
+<script>{{CORE}}</script>
+<script>
+(function(){'use strict';
+const CSV={};document.querySelectorAll('script[type="text/csv"]').forEach(s=>CSV[s.id.slice(4)]=s.textContent);
+const GEO=JSON.parse(document.getElementById('geo').textContent),META=JSON.parse(document.getElementById('meta').textContent),D=Core.build(CSV,GEO,META);
+const st={pid:'tp-ho-chi-minh',k:3,peer:'quartile',ev:'both',sg:'auto',frac:100,excl:false,adjust:false,map:'auto'},$=id=>document.getElementById(id);
+const h=(location.hash||'').slice(1);if(D.ids.includes(h))st.pid=h;
+$('sel-prov').innerHTML=[...D.ids].sort((a,b)=>D.name[a].localeCompare(D.name[b],'vi')).map(i=>`<option value="${i}">${Core.esc(D.name[i])}</option>`).join('');
+$('sel-sg').innerHTML='<option value="auto">The selected priority group</option>'+D.groups.map((g,i)=>`<option value="${i}">${Core.esc(g.label)}</option>`).join('');
+$('sel-map').innerHTML='<option value="auto">The selected priority group</option>'+D.groups.map((g,i)=>`<option value="${i}">${Core.esc(g.label)}</option>`).join('');
+function update(){
+  const A=Core.analyse(D,st);window.DASH.A=A;
+  $('sel-prov').value=st.pid;$('headline').textContent=A.headline;$('lg-name').textContent=A.name;$('keys').innerHTML=Core.keyHTML(A);
+  $('chart').innerHTML=Core.chartSVG(A,Math.max(300,$('chart').clientWidth||340));
+  $('table').innerHTML=Core.tableHTML(A);
+  $('nline').innerHTML=Core.nLine(A);
+  const sgi=st.sg==='auto'?A.featured:+st.sg;$('sel-sg').value=st.sg;$('sel-sg').options[0].textContent='The selected priority group ('+D.groups[A.featured].label+')';$('sel-ev').value=st.ev;$('sel-peer').value=st.peer;$('rng').value=st.frac;$('rng-out').textContent=st.frac+'%';$('rng').setAttribute('aria-valuetext',st.frac+'% of the gap closed');$('rng').disabled=!(A.rows[sgi].shortfall>0);
+  $('scen-out').innerHTML=Core.scenarioHTML(A,Core.scenario(D,A,sgi,st.frac));
+  $('peernote').textContent=`Peers (${A.peers.length}): ${A.peerText}${st.excl?', without HCMC and Hà Nội':''}. Peer median excludes ${A.name}.${st.peer==='quartile'||st.peer==='nearest8'?' Income uses ln GRDP per capita 2024 (the 2025 file has no GRDP).':''}`;
+  const gi=st.map==='auto'?A.featured:+st.map,M=Core.mapSVG(A,D,gi,Math.max(240,$('map').clientWidth||300));$('map').innerHTML=M.svg;
+  $('bar').style.background='linear-gradient(90deg,'+Core.RAMP.join(',')+')';$('bmin').textContent=Core.fnum(M.lo)+' SD';$('bmax').textContent=Core.fnum(M.hi)+' SD';
+  $('sel-map').options[0].textContent='The selected priority group ('+D.groups[A.featured].label+')';
+  history.replaceState(null,'','#'+st.pid);}
+function foot(){const m=META,loo=Core.analyse(D,st).looR2;
+  $('foot').innerHTML=`<h2>Sources</h2><ul><li>PCI 2.0 (2025) sub-index scores and business-performance index: ${Core.esc(m.bpi_source)}, accessed ${Core.esc(m.bpi_date)} (pci_provinces.csv, pci_bpi_2025.csv).</li><li>Firms, population, GRDP per capita 2018\u20132024: ${Core.esc(m.nso_note)}, accessed ${Core.esc(m.nso_date)} (outcomes_panel_63.csv, merged to 34 in outcomes_34_rebuilt.csv).</li><li>Province merger: ${Core.esc(m.crosswalk_note)} (crosswalk_63_to_34.csv). Old PCI 2010\u20132024: pci_panel_63.csv. Boundaries: vn_provinces.geojson, simplified for display.</li></ul>
+<h2>Method</h2><ul><li><b>Group scores.</b> Each 2025 sub-index is z-scored across the 34 provinces, averaged within its bridge group (pci_concordance.csv, bridge_groups.csv) and re-standardised across the 34. No old-framework score is mixed into 2025, and no 2024-to-2025 change is computed (framework break).</li><li><b>Peers.</b> Default: provinces in the same quartile of ln GRDP per capita (2024). The peer median excludes the province itself.</li><li><b>Trend.</b> Merged 34-province panel (old framework), within-year z-scores, 3-year averages ${m.trend}.</li><li><b>Panel association.</b> ln(new firms per 1000) at t+k on the group score at t, province and year fixed effects, errors clustered by province (34 clusters), 2018\u20132024 outcomes.</li><li><b>Scenario.</b> Shift = share of the gap closed \u00D7 shortfall to the peer median (SD). Range = shift \u00D7 the 95% percentile-bootstrap interval of the association (B = 2000 resamples of provinces). 2025: new firms per 1000 on the group score; panel: province and year fixed effects, % change k years later. A straight-line association, not a forecast. With few clusters, percentile intervals can be too narrow.</li></ul>
+<h2>Live or precomputed</h2><ul><li><span class="badge live">live</span> group scores, peer sets, gaps, income-predicted score, 2025 association (OLS with HC3 errors), scores, labels and the scenario arithmetic: recomputed in the browser from the CSVs embedded in this file.</li><li><span class="badge py">analysis/</span> 63\u219234 merge, merged panel scores, panel fixed-effects estimates (data/model_results.csv), ridge results and bootstrap intervals (data/bootstrap_results.csv, analysis/06a_bootstrap.py). Out-of-sample (leave-one-out) R\u00B2 of the nine-sub-index ridge for new firms per 1000: ${loo?Core.fnum(loo.v):'n/a'} (n = ${loo?loo.n:'n/a'}); a value near or below zero means the sub-indices do not predict out of sample.</li></ul>
+<h2>Limits</h2><ul><li>PCI is a perception survey of firms. Fixed effects remove only time-invariant province confounders, not shocks that differ by province and year. n = 34 provinces; results are associations.</li><li>The 2025 framework break limits comparison with earlier years. 2025 scores are paired with 2024 outcomes (no lag) because the 2025 file holds 2024 firm counts.</li><li>Horizon and cost are team assumptions. Pre-2018 merge weights use fixed 2018 active-firm counts. Full list: docs/LIMITATIONS.md.</li></ul>
+<p>Data embedded from: ${m.files.map(f=>`<code>${Core.esc(f[0])}</code> (${f[1]})`).join(', ')}.</p>`;}
+window.DASH={D,st,update,setState:o=>{Object.assign(st,o);update();}};
+const bind=(id,k,f)=>$(id).addEventListener('change',e=>{st[k]=f(e.target);update();});
+bind('sel-prov','pid',e=>e.value);bind('sel-k','k',e=>+e.value);bind('sel-peer','peer',e=>e.value);bind('sel-ev','ev',e=>e.value);bind('sel-sg','sg',e=>e.value);$('rng').addEventListener('input',e=>{st.frac=+e.target.value;update();});bind('chk-excl','excl',e=>e.checked);bind('chk-adj','adjust',e=>e.checked);bind('sel-map','map',e=>e.value);
+$('map').addEventListener('click',e=>{const p=e.target.closest('.prov');if(p){st.pid=p.dataset.id;update();}});
+$('map').addEventListener('keydown',e=>{if(e.key==='Enter'){const p=e.target.closest('.prov');if(p){st.pid=p.dataset.id;update();}}});
+let t;window.addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(update,150);});
+foot();update();})();
+</script></body></html>
